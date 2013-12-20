@@ -6,11 +6,10 @@ export PGHOST=127.0.0.1
 
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home
 export ANT_HOME=/Users/andrewrohling/dev/ant
+export ANT_OPTS=-Dbuild.sysclasspath=ignore
 export JVM_ARGS='-Xmx1024m -XX:MaxPermSize=256m'
 
 export HISTIGNORE='ls:ls *:cd:cd *:pwd;exit:date:* --help:history*:&'
-
-#export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/share/npm/bin:/Users/andrewrohling/bin
 
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/share/npm/bin:$ANT_HOME/bin:$PATH
 
