@@ -4,12 +4,13 @@ if [ -f "$HOME/.psql.conf" ]; then
     source $HOME/.psql.conf
 fi
 
-
 if [ -f "$HOME/.rvm/scripts/rvm" ]; then
     source $HOME/.rvm/scripts/rvm
 fi
 
-source /usr/local/bin/aws_zsh_completer.sh
+if [ -f "$HOME/.rvm/scripts/rvm" ]; then
+    source /usr/local/bin/aws_zsh_completer.sh
+fi
 
 if [ -f "${HOME}/.gpg-agent-info" ]; then
     . "${HOME}/.gpg-agent-info"
@@ -20,12 +21,14 @@ fi
 GPG_TTY=$(tty)
 export GPG_TTY
 
+# MacOS
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/
 export ANT_HOME=$HOME/dev/ant
-
-export HISTIGNORE='ls:ls *:cd:cd *:pwd;exit:date:* --help:history*:&'
-
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/share/npm/bin:$ANT_HOME/bin:$PATH
+
+# OpenBSD
+export PKG_PATH=ftp://ftp.openbsd.org/pub/OpenBSD/$(uname -r)/packages/$(machine -a)/
+
 
 export EDITOR="vim"
 
