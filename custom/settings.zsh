@@ -1,6 +1,13 @@
 ZSH_THEME='andrew'
 
-source $HOME/.psql.conf
+if [ -f "$HOME/.psql.conf" ]; then
+    source $HOME/.psql.conf
+fi
+
+
+if [ -f "$HOME/.rvm/scripts/rvm" ]; then
+    source $HOME/.rvm/scripts/rvm
+fi
 
 source /usr/local/bin/aws_zsh_completer.sh
 
@@ -23,8 +30,6 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/local/share/npm/bin:$ANT_HOME/bin:$PAT
 export EDITOR="vim"
 
 export HISTIGNORE="ls:ls *:cd:cd *:pwd;exit:date:* --help:history*:&"
-
-source $HOME/.rvm/scripts/rvm
 
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
