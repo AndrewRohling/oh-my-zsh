@@ -2,10 +2,19 @@ ZSH_THEME='andrew'
 
 source $HOME/.psql.conf
 
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home
+source /usr/local/bin/aws_zsh_completer.sh
+
+if [ -f "${HOME}/.gpg-agent-info" ]; then
+    . "${HOME}/.gpg-agent-info"
+    export GPG_AGENT_INFO
+    export SSH_AUTH_SOCK
+fi
+
+GPG_TTY=$(tty)
+export GPG_TTY
+
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/
 export ANT_HOME=$HOME/dev/ant
-export ANT_OPTS=-Dbuild.sysclasspath=ignore
-export JVM_ARGS='-Xmx1024m -XX:MaxPermSize=256m'
 
 export HISTIGNORE='ls:ls *:cd:cd *:pwd;exit:date:* --help:history*:&'
 
