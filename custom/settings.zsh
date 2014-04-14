@@ -24,6 +24,7 @@ export GPG_TTY
 # MacOS
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/
 export ANT_HOME=$HOME/dev/ant
+export TOMCAT_DIR=$HOME/dev/tomcat
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/share/npm/bin:$ANT_HOME/bin:$PATH
 
 # OpenBSD
